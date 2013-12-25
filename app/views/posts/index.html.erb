@@ -1,0 +1,16 @@
+<br>
+<%= search_form_for @t, url: posts_path do |f| %>
+    <%= f.label :title_cont %>
+    <%= f.text_field :title_cont %>
+    <%= f.submit %>
+<% end %>
+
+
+<% @article.each do |article| %>
+    <tr>
+      <td><%= article.title %></td><br>
+      <td><%= article.body %></td><br>
+      <%= link_to "Devamini goster",post_path(article.id)%>
+      <hr>
+    </tr>
+<% end %>

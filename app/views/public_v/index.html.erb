@@ -1,0 +1,19 @@
+<br>
+<%= search_form_for @p, url: public_v_index_path do |f| %>
+    <%= f.label :title_cont %>
+    <%= f.text_field :title_cont %>
+    <%= f.submit %>
+<% end %>
+<br>
+<% for video in @search %>
+    <video id="<%= video.title %>" class="video-js vjs-default-skin vjs-big-play-centered"
+     controls preload="auto" autoplay="false" width="640" height="264"
+       poster="http://video-js.zencoder.com/oceans-clip.png"
+       data-setup='{"example_option":true,"loop": "false","autoplay": false}'>
+  <source src="<%= video.file %>" type='video/mp4' />
+</video>
+    <%= video.description %>
+    <hr>
+    <br>
+<% end %>
+

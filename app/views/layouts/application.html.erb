@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DeshiCms</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+  <script type="text/javascript">
+      document.createElement('video');document.createElement('audio');
+  </script>
+  <link href="//vjs.zencdn.net/4.2/video-js.css" rel="stylesheet">
+  <script src="//vjs.zencdn.net/4.2/video.js"></script>
+</head>
+<body>
+<% if admin_signed_in? %>
+    <%= link_to "Home", root_path%>
+    <%= link_to "Write an Article", articles_path%>
+    <%= link_to "Upload Video",videos_path %>
+    <%= link_to "Sign Out", destroy_admin_session_path, :method => :delete %>
+<%else %>
+    <%= link_to "Home", root_path%>
+    <%= link_to "Article", posts_path %>
+    <%= link_to "Video Gallery",public_v_index_path %>
+    <%= link_to "feedback or contact", new_message_path%>
+<% end %>
+<%= yield %>
+
+</body>
+</html>

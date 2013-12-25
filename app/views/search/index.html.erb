@@ -1,0 +1,6 @@
+
+<%= search_form_for @q do, url: public_v_index_path  |f| %>
+    <%= f.label :title_cont %>
+    <%= f.text_field :title_cont %>
+    <%= f.submit %>
+<% end %>
