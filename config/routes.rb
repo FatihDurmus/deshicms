@@ -1,6 +1,8 @@
 DeshiCms::Application.routes.draw do
 
 
+  get "public_p/index"
+  get "comments/create"
   devise_for :users
   resources :comments
   resources :posts

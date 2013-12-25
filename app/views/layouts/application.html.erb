@@ -5,6 +5,8 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <!-- Latest compiled and minified CSS -->
+  <!-- Other JS plugins can be included here -->
   <script type="text/javascript">
       document.createElement('video');document.createElement('audio');
   </script>
@@ -12,18 +14,71 @@
   <script src="//vjs.zencdn.net/4.2/video.js"></script>
 </head>
 <body>
+
+<script src="js/foundation/foundation.js"></script>
+<script src="js/foundation/foundation.topbar.js"></script>
+<!-- Other JS plugins can be included here -->
+
+<script>
+    $(document).foundation();
+</script>
 <% if admin_signed_in? %>
-    <%= link_to "Home", root_path%>
-    <%= link_to "Write an Article", articles_path%>
-    <%= link_to "Upload Video",videos_path %>
-    <%= link_to "Sign Out", destroy_admin_session_path, :method => :delete %>
+    <nav class="top-bar" data-topbar>
+      <ul class="title-area">
+        <li class="name">
+          <h1><%= link_to "DeshiCms", root_path%></h1>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+      </ul>
+      <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+          <li><%= link_to "Çıkış Yap", destroy_admin_session_path, :method => :delete %></li>
+          <li class="has-dropdown">
+            <a href="#">Bölümler</a>
+            <ul class="dropdown">
+              <li><%= link_to "Home", root_path%></li>
+              <li><%= link_to "Write an Article", articles_path%></li>
+              <li><%= link_to "Upload Video",videos_path %></li>
+              <li><%= link_to "Upload a Photo", photos_path%></li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+    </nav>
 <%else %>
-    <%= link_to "Home", root_path%>
-    <%= link_to "Article", posts_path %>
-    <%= link_to "Video Gallery",public_v_index_path %>
-    <%= link_to "feedback or contact", new_message_path%>
+    <nav class="top-bar" data-topbar>
+      <ul class="title-area">
+        <li class="name">
+          <h1><%= link_to "DeshiCms", root_path%></h1>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+      </ul>
+      <section class="top-bar-section">
+        <!-- Right Nav Section -->
+        <ul class="right">
+          <% if !user_signed_in?%>
+            <li class="active"><%= link_to "Üye Girişi",user_session_path%></li>
+          <% else %>
+              <li class="active"><%= link_to "Çıkış Yap",destroy_user_session_path, :method => 'delete' %></li>
+          <% end %>
+          <li class="has-dropdown">
+            <a href="#">Bölümler</a>
+            <ul class="dropdown">
+              <li><%= link_to "Yazılar", posts_path %></li>
+              <li><%= link_to "Video Gallery",public_v_index_path %></li>
+              <li><%= link_to "Photo Gallery", public_p_index_path%></li>
+              <li><%= link_to "contact", new_message_path%></li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+    </nav>
+
 <% end %>
-<%= yield %>
+
+
+    <%= yield %>
 
 </body>
 </html>
