@@ -32,8 +32,8 @@ test:
 production:
   adapter: postgresql
   encoding: utf8
-  database: DeshiCms_production
+  database: ruby
   pool: 5
-  username: root
-  password: mypassword
+  username: adminmrf7hsF
+  password: tn4JQ85_sqi2
   socket: /var/run/mysql/mysqld.sock

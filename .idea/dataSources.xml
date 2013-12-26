@@ -20,9 +20,9 @@
     <data-source source="LOCAL" name="Rails DeshiCms: production" uuid="31a14f29-0bb9-4d27-9165-6c58962f54fa">
       <driver-ref>postgresql</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql:DeshiCms_production</jdbc-url>
-      <user-name>root</user-name>
-      <user-password>dfc7dfd3dfdadfcbdfd9dfd9dfdddfc5dfd8dfce</user-password>
+      <jdbc-url>jdbc:postgresql:ruby</jdbc-url>
+      <user-name>adminmrf7hsF</user-name>
+      <user-password>dfdedfc4df9edfe0dffbdf92df9fdff5dfd9dfdbdfc3df98</user-password>
       <libraries />
     </data-source>
   </component>
