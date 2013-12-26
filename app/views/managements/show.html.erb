@@ -1,0 +1,16 @@
+<br>
+<%= @user.email%>
+<br>
+<%= form_for @user,:url => management_path(@user) do |f| %>
+    <div class="field">
+      <%= f.label :email %><br>
+      <%= f.text_field :email %>
+    </div>
+    <div class="field">
+      <%= f.label :password %><br>
+      <%= f.text_area :password  %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+<% end %>

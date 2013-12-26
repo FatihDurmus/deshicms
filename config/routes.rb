@@ -1,9 +1,23 @@
 DeshiCms::Application.routes.draw do
 
 
+
   get "public_p/index"
   get "comments/create"
+
   devise_for :users
+
+  devise_scope :user do
+    resource :registration,
+             only: [:new, :create, :edit, :update],
+             path: 'users',
+             path_names: { new: 'sign_up' },
+             controller: 'devise/registrations',
+             as: :user_registration do
+      get :cancel
+    end
+  end
+  resources :managements
   resources :comments
   resources :posts
   get "search/index"

@@ -1,0 +1,10 @@
+<br>
+<%= search_form_for @t, url: managements_path do |f| %>
+    <%= f.label :email_cont %>
+    <%= f.text_field :email_cont %>
+    <%= f.submit %>
+<% end %>
+<% for user in @user %>
+
+   <%= link_to user.email, management_path(user.id) %>
+<% end %>
