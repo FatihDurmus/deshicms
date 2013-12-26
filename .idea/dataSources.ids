@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source source="LOCAL" name="Rails DeshiCms: development" uuid="97683dc6-98ae-44ca-b6cc-f3a2e72fb7f6">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source source="LOCAL" name="Rails DeshiCms: test" uuid="9ccb7067-ca22-4b45-8d63-bc4f560652b0">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source source="LOCAL" name="Rails DeshiCms: production" uuid="31a14f29-0bb9-4d27-9165-6c58962f54fa">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+</component>
