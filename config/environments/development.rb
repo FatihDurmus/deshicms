@@ -36,7 +36,7 @@ DeshiCms::Application.configure do
       :port           => 587,
       :authentication => :plain,
       :user_name      => "fatihdurmus15@gmail.com",
-      :password       => "138303",
+      :password       => "",
       :openssl_verify_mode  => 'none'
   }
 
